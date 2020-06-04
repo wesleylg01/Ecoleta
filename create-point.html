@@ -12,57 +12,58 @@
 </head>
 <body>
 
-    <div id="page-create-point">
-        
-            <header>
-                <img src="/assets/logo.svg" alt="Logomarca">
-                <a href="http://google.com">
+    <div id="page-create-point">        
+        <header>
+            <img src="/assets/logo.svg" alt="Logomarca">
+                 <a href="http://google.com">
                     <span></span>
                     Voltar para home
                 </a>
-            </header>
-            <form action="">
-                <h1>Cadastro de ponto de coleta</h1>
-
-                <fieldset>
-                    <legend>
-                        <h2>Dados da Entidade</h2>
-                    </legend>  
+        </header>
+        <form action="">
+            <h1>Cadastro de ponto de coleta</h1>
+            <fieldset>
+                <legend>
+                    <h2>Dados da Entidade</h2>
+                </legend>  
+                <div class="field">
+                    <label for="name">Nome da Entidade</label>
+                    <input type="text" name="name" required>
+                </div>              
+                <div class="field-group">
                     <div class="field">
-                        <label for="name">Nome da Entidade</label>
-                        <input type="text" name="name" >
-                    </div>              
-                    <div class="field-group">
-                        <div class="field">
-                            <label for="adress">Endereço</label>
-                            <input type="text" name="adress">
-                        </div>
-                        <div class="field">
-                            <label for="number">Número/Complemento</label>
-                            <input type="text" name="number">
-                        </div>
-                    </div>    
-                    <div class="field-group">
-                        <div class="field">
-                            <label for="uf">Estado</label>
-                            <select name="uf" >
-                                <option value="">Selecione o Estado</option>
-                            </select>
+                        <label for="adress">Endereço</label>
+                        <input type="text" name="adress" required>
+                    </div>
+                    <div class="field">
+                        <label for="number">Número/Complemento</label>
+                        <input type="text" name="number" required>
+                    </div>
+                </div>    
+                <div class="field-group">
+                    <div class="field">
+                        <label for="uf">Estado</label>
+                        <select name="uf" required>
+                            <option value="">Selecione o Estado</option>
+                        </select>
 
-                            <input type="hidden" name="state">
-                        </div>                        
-                        <div class="field">
-                            <label for="city">Cidade</label>
-                            <select name="city" disabled >
-                                <option value="">Selecione a Cidade</option>
-                            </select>
-                        </div>                        
-                    </div>    
-                </fieldset>
-     
-                <button type="submit">Cadastrar ponto de coleta</button>
-            </form>
-       
+                        <input type="hidden" name="state">
+                    </div>                        
+                    <div class="field">
+                        <label for="city">Cidade</label>
+                        <select name="city" disabled required>
+                            <option value="">Selecione a Cidade</option>
+                        </select>
+                    </div>                        
+                </div>    
+            </fieldset>     
+            <fieldset>
+                <legend>
+                    <h2>Ítens de coleta</h2>
+                </legend>
+            </fieldset>
+            <button type="submit">Cadastrar ponto de coleta</button>
+        </form>       
     </div>
     <script src="/scripts/create-point.js"></script>
 </body>
