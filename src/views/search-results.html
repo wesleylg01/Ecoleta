@@ -14,27 +14,26 @@
     <div id="page-search-results">        
         {% include "partials/page-header.html" %}
        <main>
-           <h4><strong>2 pontos</strong> encontrados</h4>
+       {% if total > 0 %}
+           <h4><strong>{{total}} pontos</strong> encontrados</h4>
            <div class="cards">
-               <div class="card">
-                   <img src="https://images.unsplash.com/photo-1579756423478-02bc82a97679?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=354&q=80" alt="Colectoria">
-                   <h1>Colectoria</h1>
-                   <h3>Resíduos Eletrônicos, lâmpadas</h3>
-                    <p>Rio do Sul, Santa Catarina </br>
-                        Guilherma Gembalia, Jardim América </br>
-                        n° 260
-                    </p>
-               </div>
-               <div class="card">
-                <img src="https://images.unsplash.com/photo-1542739674-b449a8938b59?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=80" alt="Colectoria">
-                <h1>Papersider</h1>
-                <h3>Papéis e Papelão</h3>
-                 <p>Rio do Sul, Santa Catarina </br>
-                     Guilherma Gembalia, Jardim América </br>
-                     n° 260
-                 </p>
-            </div>
+               
+               {% for place in places %}
+                   <div class="card">
+                        <img src="{{place.image }}" alt="Colectoria">
+                        <h1>{{place.name}}</h1>
+                        <h3>{{place.items}}</h3>
+                        <p>{{place.city}}, {{place.state}} <br/>
+                            {{place.address}} <br/>
+                            {{place.address2}}
+                        </p>
+                    </div>
+               {% endfor %}
            </div>
+       {% else %}
+            <h4> <strong> Nenhum</strong> ponto de coleta cadastrado.</h4> 
+       {% endif %}
+
        </main>
     </div>
 {% endblock content %}
