@@ -1,7 +1,7 @@
 // const express recive the 'express'
 const express = require("express")
 // const server will exec the function express, the const express recive the function, 
-// so i can use the cont like a function
+// so i can use the const like a function
 const server = express()
 
 //recive the database, the connection with bd
@@ -32,7 +32,7 @@ server.get("/create-point", (req, res) =>{
 
 server.post("/savepoint", (req, res) =>{
     // The structure for insert
-    const query  = `INSERT INTO places (image,name,address,address2,state,city,items) VALUES (?,?,?,?,?,?,?);`
+    const query  = `INSERT INT places (image,name,address,address2,state,city,items) VALUES (?,?,?,?,?,?,?);`
     // The data to insert
     const values = [req.body.image, req.body.name, req.body.address, req.body.address2, req.body.state, req.body.city, req.body.items]
 
@@ -40,8 +40,7 @@ server.post("/savepoint", (req, res) =>{
     // while inserts run, this functio say if insert happenf or not
     function afterInsertData(err){
         if (err){
-            console.log(err)
-            return res.send("Erro no cadastro ;(")
+            return res.render("create-point.html", {saved: false})
         }
         return res.render("create-point.html", {saved: true})
     }

@@ -86,3 +86,29 @@
     color: white;
     margin-top: 32px;
 }
+#modal.point h2{
+    color: white;
+    font-size: 172px;
+}
+#modal.point p{
+    color: white;
+    margin-top: 32px;
+    font-size: 20px;
+}
+#modal.point input{
+    width: 65%;
+    max-width: 3690px;
+    height: 72px;
+    border-radius: 8px;
+    margin-top: 80px;
+    background-color: #af3e3e;
+    transition: 400ms;
+    font-weight: bold;
+    color: rgb(255, 254, 254);
+    font-size: 24px;
+    transition: 200px;
+}
+
+#modal.point input:hover {
+    background-color: #af3030;
+}
