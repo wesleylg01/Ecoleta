@@ -32,7 +32,7 @@ server.get("/create-point", (req, res) =>{
 
 server.post("/savepoint", (req, res) =>{
     // The structure for insert
-    const query  = `INSERT INT places (image,name,address,address2,state,city,items) VALUES (?,?,?,?,?,?,?);`
+    const query  = `INSERT INTO places (image,name,address,address2,state,city,items) VALUES (?,?,?,?,?,?,?);`
     // The data to insert
     const values = [req.body.image, req.body.name, req.body.address, req.body.address2, req.body.state, req.body.city, req.body.items]
 
